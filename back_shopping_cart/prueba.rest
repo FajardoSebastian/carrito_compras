@@ -1,0 +1,50 @@
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/items
+
+###
+GET http://localhost:3000/items/item
+Content-Type: application/json
+
+{
+    "itemId": "6069f815de84302a906599eb"
+}
+###
+GET http://localhost:3000/img/pokemon-rojo.jpg
+
+###
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+   "title": "Sonic",
+    "price": 6.99,
+    "image": "sonic.jpg"
+  
+}
+
+###
+POST http://localhost:3000/create-payment-intent
+Content-Type: application/json
+
+[
+    {
+        "id": "6069f815de84302a906599eb",
+        "qty": 2
+    }
+]
+
+###
+POST http://localhost:3000/order
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "items":[
+        {
+            "id": "6069f815de84302a906599eb",
+            "qty": 2
+        }
+    ]
+}
